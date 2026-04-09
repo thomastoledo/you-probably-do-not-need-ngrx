@@ -1,0 +1,12 @@
+:root {
+  --deck-page-bg: #020617;
+}
+
+html,
+body,
+#app,
+.slidev-slide-container,
+.slidev-slide-content,
+.slidev-page {
+  background-color: var(--deck-page-bg) !important;
+}
