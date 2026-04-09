@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "slidev build",
+    "build:github-pages": "slidev build --base /you-probably-dont-need-ngrx/ --out dist-gh-pages",
     "dev": "slidev --open",
     "export": "slidev export"
   },

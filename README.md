@@ -45,7 +45,32 @@ Slidev will open the presentation in your browser. If it does not open automatic
 
 - `pnpm dev` starts the Slidev dev server
 - `pnpm build` builds the static presentation into `dist/`
+- `pnpm build:github-pages` builds the presentation for `https://thomastoledo.github.io/you-probably-dont-need-ngrx/`
 - `pnpm export` exports the slides using Slidev's export workflow
+
+## Deploy to GitHub Pages
+
+The Slidev build uses root-relative asset URLs by default, for example `/assets/...`.
+That works when the presentation is hosted at the site root, but it breaks when the deck
+is copied into a subfolder of a Jekyll blog such as `/you-probably-dont-need-ngrx/`.
+
+Build the deck for your GitHub Pages subpath:
+
+```bash
+pnpm build:github-pages
+```
+
+Then copy the contents of `dist-gh-pages/` into the `you-probably-dont-need-ngrx/`
+folder of your `thomastoledo.github.io` repository and push the change.
+
+The final URL should be:
+
+```text
+https://thomastoledo.github.io/you-probably-dont-need-ngrx/
+```
+
+If you want to publish the talk under a different folder, change the `--base` value in
+`package.json` so it matches the public URL exactly.
 
 ## Project files
 
